@@ -85,6 +85,7 @@ Si el token agregado va a interactuar con los endpoints que son para ADMIN, no l
 ## Nota
 
 ```bash
+OJO Para el servicio de filtro está comentdo los parámetros a escoger solo se descomenta el filtro a tratar para que consuma
 
 LINK DE SWAGGER: http://localhost:8080/swagger-ui/index.html#/
 la aplicacion se abrira por defecto en el puerto 8080
