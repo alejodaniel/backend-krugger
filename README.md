@@ -85,6 +85,8 @@ Si el token agregado va a interactuar con los endpoints que son para ADMIN, no l
 ## Nota
 
 ```bash
+
+LINK DE SWAGGER: http://localhost:8080/swagger-ui/index.html#/
 la aplicacion se abrira por defecto en el puerto 8080
 
 Credenciales Usuario Admin
