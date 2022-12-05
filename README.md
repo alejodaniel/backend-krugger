@@ -64,17 +64,22 @@ En los catálogos el usuario ADMIN puede:
 - Obtener los catálogos por el id del padre y obtener todos los catálogos padres
 - Se añadió el método delete para que se elimine permanentemente de la base de datos
 
-El los roles se puede agregar mediante el script los roles asignados para el proyecto.
+- En los roles se puede agregar mediante el script los roles asignados para el proyecto.
 
-Tanto el User, Rol y Employee van de la mano ya que para crear un registro deben de interactuar esas 3 tablas para el guardado en la base de datos.
+- Tanto el User, Rol y Employee van de la mano ya que para crear un registro deben de interactuar esas 3 tablas para el guardado en la base de datos.
 
-Cuando se crear un empleado se realizan las respectivas validaciones de campos requeridos, email correcto y cédula de inentidad que sea ecuatorina.
-También se le asigna el valor del campo is_deleted en 0, created_at, created_by  y se crea automaticamente el usuario y contraseña en la base de datos siendo ésta la contraseña encriptada el número de cédula.
-El rol de ese usuario será el id 2 (EMPLOYEE)
+- Cuando se crear un empleado se realizan las respectivas validaciones de campos requeridos, email correcto y cédula de inentidad que sea ecuatorina.
+- También se le asigna el valor del campo is_deleted en 0, created_at, created_by  y se crea automaticamente el usuario y contraseña en la base de datos siendo ésta la contraseña encriptada el número de cédula.
+- El rol de ese usuario será el id 2 (EMPLOYEE)
 
-El usuario creado puede iniciar sesión obtener su token y agregarlo en el Authorization para consumir los endpoints asignados.
+- El usuario creado puede iniciar sesión obtener su token y agregarlo en el Authorization para consumir los endpoints asignados.
 Si el token agregado va a interactuar con los endpoints que son para ADMIN, no lo va a permitir ya que cada endpoint pertenece a cada rol.
 
+- Para eliminar nuestro empleado, no lo eliminamos de la manera tradicional mas bien utilizamos el borrador lógico que seteamos el campo is_deleted en 1 para este proyecto, y para consumir nuestro servicio de get  y filtros obtendrá solo los datos que el campos is_deleted sea 0
+
+- Cuando un empleado pueda actualizar la información el campo parámetro en postman "vaccinationstatus": debe ser VACUNADO o NO_VACUNADO ya que el campo está registrado por un tipo enum y eso valida a que se deba poner obligatoriamente el valor correspondiente.
+
+- A su vez el sistema valida que si el usuario está: VACUNADO los parámetros: vaccineDate, vaccineTypeId y doseNumber sean obligarios, si no es el caso no son obligatorios y en base se guardarán como nulos
 ```
 
 ## Nota
